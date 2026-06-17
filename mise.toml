@@ -1,0 +1,27 @@
+# Optional developer task runner. Never on the reviewer's critical path; the
+# documented run stays `docker compose up`.
+
+[tasks.lint]
+description = "Lint with ruff"
+run = "uv run ruff check ."
+
+[tasks.format]
+description = "Format with ruff"
+run = "uv run ruff format ."
+
+[tasks.typecheck]
+description = "Type-check src with mypy"
+run = "uv run mypy src"
+
+[tasks.test]
+description = "Run the full test suite against a disposable Postgres"
+run = "bash scripts/test.sh"
+
+[tasks.check]
+description = "Full local gate: format check, lint, types, tests"
+run = [
+    "uv run ruff format --check .",
+    "uv run ruff check .",
+    "uv run mypy src",
+    "bash scripts/test.sh",
+]

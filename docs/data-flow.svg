@@ -1,0 +1,159 @@
+<svg viewBox="0 0 940 660" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <title>Survey Insights data flow, annotated with fast choices, repeatable choices, and scale-time changes</title>
+  <desc>A vertical pipeline from CSV upload through ingestion, Postgres storage, FastAPI, and the read clients. Left chips mark what makes it fast or repeatable; right chips mark what swaps at 10x and 100x.</desc>
+
+  <rect x="0" y="0" width="940" height="660" fill="#ffffff"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- column headers -->
+  <text x="150" y="28" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0f766e">WHY IT'S FAST / REPEATABLE</text>
+  <text x="470" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">THE DATA FLOW</text>
+  <text x="800" y="28" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7c3aed">WHAT CHANGES AT SCALE</text>
+
+  <!-- ===== PIPELINE (center column) ===== -->
+  <g>
+    <rect x="360" y="44" width="220" height="56" rx="10" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text x="470" y="68" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0f172a">1 · CSV upload</text>
+    <text x="470" y="87" text-anchor="middle" font-size="11.5" fill="#475569">drag onto Web UI → POST /ingest</text>
+  </g>
+  <line x1="470" y1="100" x2="470" y2="124" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <g>
+    <rect x="360" y="126" width="220" height="56" rx="10" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text x="470" y="150" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0f172a">2 · DataSource</text>
+    <text x="470" y="169" text-anchor="middle" font-size="11.5" fill="#475569">newest file wins (interface)</text>
+  </g>
+  <line x1="470" y1="182" x2="470" y2="206" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <g>
+    <rect x="360" y="208" width="220" height="64" rx="10" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text x="470" y="232" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0f172a">3 · Ingestion (Python)</text>
+    <text x="470" y="251" text-anchor="middle" font-size="11.5" fill="#475569">validate → clean → derive</text>
+    <text x="470" y="266" text-anchor="middle" font-size="11.5" fill="#475569">→ aggregate</text>
+  </g>
+  <line x1="470" y1="272" x2="470" y2="296" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <g>
+    <rect x="338" y="298" width="264" height="92" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="470" y="320" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0f172a">4 · PostgreSQL</text>
+    <rect x="352" y="330" width="110" height="48" rx="7" fill="#ecfdf5" stroke="#6ee7b7"/>
+    <text x="407" y="349" text-anchor="middle" font-size="11" font-weight="700" fill="#065f46">responses</text>
+    <text x="407" y="365" text-anchor="middle" font-size="9.5" fill="#047857">source of truth</text>
+    <rect x="478" y="330" width="110" height="48" rx="7" fill="#fff7ed" stroke="#fdba74"/>
+    <text x="533" y="349" text-anchor="middle" font-size="11" font-weight="700" fill="#9a3412">distributions</text>
+    <text x="533" y="365" text-anchor="middle" font-size="9.5" fill="#c2410c">precomputed</text>
+  </g>
+  <line x1="470" y1="390" x2="470" y2="414" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <g>
+    <rect x="360" y="416" width="220" height="56" rx="10" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text x="470" y="440" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0f172a">5 · FastAPI</text>
+    <text x="470" y="459" text-anchor="middle" font-size="11.5" fill="#475569">aggregates only, never raw rows</text>
+  </g>
+  <line x1="470" y1="472" x2="470" y2="496" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <g>
+    <rect x="360" y="498" width="220" height="56" rx="10" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text x="470" y="522" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0f172a">6 · Web UI / CLI</text>
+    <text x="470" y="541" text-anchor="middle" font-size="11.5" fill="#475569">read &amp; draw, recompute nothing</text>
+  </g>
+
+  <!-- ===== LEFT chips ===== -->
+  <g>
+    <rect x="20" y="128" width="250" height="52" rx="8" fill="#f0fdfa" stroke="#5eead4"/>
+    <rect x="20" y="128" width="5" height="52" rx="2" fill="#0d9488"/>
+    <text x="36" y="148" font-size="11" font-weight="700" fill="#0f766e">REPEATABLE</text>
+    <text x="36" y="164" font-size="10.5" fill="#115e59">One file in, never a concat —</text>
+    <text x="36" y="176" font-size="10.5" fill="#115e59">same input, no id collisions.</text>
+  </g>
+  <line x1="270" y1="154" x2="356" y2="154" stroke="#0d9488" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+  <g>
+    <rect x="20" y="214" width="250" height="52" rx="8" fill="#fff7ed" stroke="#fdba74"/>
+    <rect x="20" y="214" width="5" height="52" rx="2" fill="#ea580c"/>
+    <text x="36" y="234" font-size="11" font-weight="700" fill="#c2410c">FAST</text>
+    <text x="36" y="250" font-size="10.5" fill="#9a3412">Common cuts counted once now,</text>
+    <text x="36" y="262" font-size="10.5" fill="#9a3412">so reads do no math later.</text>
+  </g>
+  <line x1="270" y1="240" x2="356" y2="240" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+  <g>
+    <rect x="20" y="300" width="250" height="52" rx="8" fill="#f0fdfa" stroke="#5eead4"/>
+    <rect x="20" y="300" width="5" height="52" rx="2" fill="#0d9488"/>
+    <text x="36" y="320" font-size="11" font-weight="700" fill="#0f766e">REPEATABLE</text>
+    <text x="36" y="336" font-size="10.5" fill="#115e59">Rebuild = one transaction,</text>
+    <text x="36" y="348" font-size="10.5" fill="#115e59">idempotent: run twice, identical.</text>
+  </g>
+  <line x1="270" y1="326" x2="334" y2="326" stroke="#0d9488" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+  <g>
+    <rect x="20" y="384" width="250" height="64" rx="8" fill="#fff7ed" stroke="#fdba74"/>
+    <rect x="20" y="384" width="5" height="64" rx="2" fill="#ea580c"/>
+    <text x="36" y="404" font-size="11" font-weight="700" fill="#c2410c">FAST</text>
+    <text x="36" y="420" font-size="10.5" fill="#9a3412">Indexed on the read key;</text>
+    <text x="36" y="432" font-size="10.5" fill="#9a3412">avg / proportion / n derive from</text>
+    <text x="36" y="444" font-size="10.5" fill="#9a3412">one count, one SQL expression.</text>
+  </g>
+  <line x1="270" y1="408" x2="334" y2="372" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+  <g>
+    <rect x="20" y="470" width="250" height="52" rx="8" fill="#fff7ed" stroke="#fdba74"/>
+    <rect x="20" y="470" width="5" height="52" rx="2" fill="#ea580c"/>
+    <text x="36" y="490" font-size="11" font-weight="700" fill="#c2410c">FAST</text>
+    <text x="36" y="506" font-size="10.5" fill="#9a3412">Cross-tabs = one GROUP BY in</text>
+    <text x="36" y="518" font-size="10.5" fill="#9a3412">Postgres, never rows into Python.</text>
+  </g>
+  <line x1="270" y1="496" x2="356" y2="470" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+  <!-- ===== RIGHT chips ===== -->
+  <g>
+    <rect x="640" y="128" width="280" height="52" rx="8" fill="#faf5ff" stroke="#d8b4fe" stroke-dasharray="5 3"/>
+    <text x="656" y="148" font-size="11" font-weight="700" fill="#7c3aed">100x · SWAP SOURCE</text>
+    <text x="656" y="164" font-size="10.5" fill="#6b21a8">DataSource → S3 / R2 bucket;</text>
+    <text x="656" y="176" font-size="10.5" fill="#6b21a8">upload event fires the pipeline.</text>
+  </g>
+  <line x1="584" y1="154" x2="638" y2="154" stroke="#9333ea" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+  <g>
+    <rect x="640" y="208" width="280" height="64" rx="8" fill="#faf5ff" stroke="#d8b4fe" stroke-dasharray="5 3"/>
+    <text x="656" y="228" font-size="11" font-weight="700" fill="#7c3aed">10x · MOVE OFF REQUEST</text>
+    <text x="656" y="244" font-size="10.5" fill="#6b21a8">Recompute leaves the HTTP thread →</text>
+    <text x="656" y="256" font-size="10.5" fill="#6b21a8">job queue + worker; 100x: row-by-row</text>
+    <text x="656" y="268" font-size="10.5" fill="#6b21a8">insert → bulk COPY + streaming read.</text>
+  </g>
+  <line x1="584" y1="240" x2="638" y2="240" stroke="#9333ea" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+  <g>
+    <rect x="640" y="308" width="280" height="64" rx="8" fill="#faf5ff" stroke="#d8b4fe" stroke-dasharray="5 3"/>
+    <text x="656" y="328" font-size="11" font-weight="700" fill="#7c3aed">100x · SPLIT THE GRAINS</text>
+    <text x="656" y="344" font-size="10.5" fill="#6b21a8">responses → partitioned Parquet lake;</text>
+    <text x="656" y="356" font-size="10.5" fill="#6b21a8">heavy GROUP BY → DuckDB, then a</text>
+    <text x="656" y="368" font-size="10.5" fill="#6b21a8">warehouse. Append, don't recompute all.</text>
+  </g>
+  <line x1="602" y1="344" x2="638" y2="340" stroke="#9333ea" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+  <g>
+    <rect x="640" y="416" width="280" height="52" rx="8" fill="#faf5ff" stroke="#d8b4fe" stroke-dasharray="5 3"/>
+    <text x="656" y="436" font-size="11" font-weight="700" fill="#7c3aed">UNCHANGED · THE SPINE</text>
+    <text x="656" y="452" font-size="10.5" fill="#6b21a8">Same API + service interface;</text>
+    <text x="656" y="464" font-size="10.5" fill="#6b21a8">only what it dispatches to swaps.</text>
+  </g>
+  <line x1="584" y1="444" x2="638" y2="444" stroke="#9333ea" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+  <!-- ===== legend ===== -->
+  <g transform="translate(360,580)">
+    <rect x="0" y="0" width="16" height="12" rx="3" fill="#fff7ed" stroke="#ea580c"/>
+    <text x="22" y="10" font-size="11" fill="#9a3412">Fast choice</text>
+    <rect x="110" y="0" width="16" height="12" rx="3" fill="#f0fdfa" stroke="#0d9488"/>
+    <text x="132" y="10" font-size="11" fill="#0f766e">Repeatable choice</text>
+  </g>
+  <g transform="translate(360,602)">
+    <rect x="0" y="0" width="16" height="12" rx="3" fill="#faf5ff" stroke="#9333ea" stroke-dasharray="4 2"/>
+    <text x="22" y="10" font-size="11" fill="#6b21a8">Scale-time swap (10x / 100x) — code path stays, engine changes</text>
+  </g>
+</svg>

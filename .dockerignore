@@ -1,0 +1,13 @@
+.git
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+.mypy_cache
+.llm
+.env
+tests
+*.orig
+.DS_Store
+Senior_Research_Engineer_Hiring_Exercise.pdf

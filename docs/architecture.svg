@@ -1,0 +1,101 @@
+<svg viewBox="0 0 960 560" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <title>Survey Insights production architecture: browser to FastAPI, object storage, ingest worker, Postgres, and a scale-time columnar engine.</title>
+  <desc>A cloud architecture graph. The browser talks to FastAPI; uploads land in object storage and an event triggers the ingest worker, which writes detail and cubes to Postgres atomically; FastAPI reads cubes and live cross-tabs from Postgres. A columnar engine engages only at scale.</desc>
+
+  <rect x="0" y="0" width="960" height="560" fill="#ffffff"/>
+
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+    <marker id="arP" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#9333ea"/>
+    </marker>
+  </defs>
+
+  <!-- header -->
+  <text x="24" y="30" font-size="12.5" font-weight="700" fill="#0f172a">PRODUCTION ARCHITECTURE</text>
+  <text x="24" y="46" font-size="11" fill="#64748b">cloud services named in each box · local runs the same graph with local bindings</text>
+
+  <!-- ===== EDGES (drawn first, under nodes) ===== -->
+  <!-- UI -> API -->
+  <line x1="180" y1="298" x2="270" y2="298" stroke="#64748b" stroke-width="2" marker-end="url(#ar)"/>
+  <!-- API -> Object storage (upload) -->
+  <path d="M360,262 C380,210 380,168 408,150" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#ar)"/>
+  <!-- Object storage -> Ingest worker -->
+  <line x1="496" y1="120" x2="556" y2="120" stroke="#64748b" stroke-width="2" marker-end="url(#ar)"/>
+  <!-- Ingest worker -> Postgres (write) -->
+  <path d="M664,156 C720,196 760,210 790,232" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#ar)"/>
+  <!-- API -> Postgres (read) -->
+  <line x1="452" y1="306" x2="770" y2="306" stroke="#64748b" stroke-width="2" marker-end="url(#ar)"/>
+  <!-- Postgres <-> Columnar (scale) -->
+  <line x1="864" y1="372" x2="864" y2="430" stroke="#9333ea" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arP)" marker-start="url(#arP)"/>
+
+  <!-- ===== EDGE LABELS ===== -->
+  <g><rect x="186" y="288" width="78" height="18" rx="4" fill="#ffffff"/><text x="225" y="301" text-anchor="middle" font-size="10" fill="#475569">query + upload</text></g>
+  <g><rect x="332" y="196" width="74" height="18" rx="4" fill="#ffffff"/><text x="369" y="209" text-anchor="middle" font-size="10" fill="#475569">persist bytes</text></g>
+  <g><rect x="490" y="92" width="74" height="18" rx="4" fill="#ffffff"/><text x="527" y="105" text-anchor="middle" font-size="10" fill="#475569">object event</text></g>
+  <g><rect x="700" y="180" width="96" height="32" rx="4" fill="#ffffff"/><text x="748" y="194" text-anchor="middle" font-size="10" fill="#475569">write detail + cubes</text><text x="748" y="206" text-anchor="middle" font-size="9" fill="#64748b">atomic · idempotent</text></g>
+  <g><rect x="556" y="297" width="148" height="18" rx="4" fill="#ffffff"/><text x="630" y="310" text-anchor="middle" font-size="10" fill="#475569">read cubes / live cross-tab</text></g>
+  <g><rect x="812" y="392" width="104" height="32" rx="4" fill="#ffffff"/><text x="864" y="406" text-anchor="middle" font-size="9.5" font-weight="700" fill="#7c3aed">scale-time only</text><text x="864" y="418" text-anchor="middle" font-size="9" fill="#6b21a8">heavy GROUP BY</text></g>
+
+  <!-- ===== NODES ===== -->
+  <!-- Web UI -->
+  <g>
+    <rect x="20" y="262" width="160" height="72" rx="10" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text x="100" y="292" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0f172a">Web UI</text>
+    <text x="100" y="311" text-anchor="middle" font-size="11" fill="#475569">browser · read-only</text>
+  </g>
+
+  <!-- FastAPI -->
+  <g>
+    <rect x="270" y="262" width="180" height="72" rx="10" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text x="360" y="288" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0f172a">FastAPI · the spine</text>
+    <text x="360" y="306" text-anchor="middle" font-size="11" fill="#475569">Fly / Railway</text>
+    <text x="360" y="322" text-anchor="middle" font-size="10" fill="#64748b">aggregates only, never raw rows</text>
+  </g>
+
+  <!-- Object storage (cylinder) -->
+  <g>
+    <path d="M312,98 a84,11 0 0 1 168,0 v40 a84,11 0 0 1 -168,0 z" fill="#f1f5f9" stroke="#94a3b8"/>
+    <ellipse cx="396" cy="98" rx="84" ry="11" fill="#f8fafc" stroke="#94a3b8"/>
+    <text x="396" y="124" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0f172a">Object storage</text>
+    <text x="396" y="140" text-anchor="middle" font-size="10.5" fill="#475569">S3 / R2 · raw CSVs</text>
+  </g>
+
+  <!-- Ingest worker -->
+  <g>
+    <rect x="556" y="84" width="208" height="72" rx="10" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text x="660" y="114" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0f172a">Ingest worker</text>
+    <text x="660" y="133" text-anchor="middle" font-size="10.5" fill="#475569">validate · clean · derive · aggregate</text>
+  </g>
+
+  <!-- Postgres (two grains, matches data-flow) -->
+  <g>
+    <rect x="772" y="216" width="184" height="156" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="864" y="240" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">PostgreSQL · Neon</text>
+    <rect x="786" y="252" width="156" height="50" rx="7" fill="#ecfdf5" stroke="#6ee7b7"/>
+    <text x="864" y="272" text-anchor="middle" font-size="11" font-weight="700" fill="#065f46">responses</text>
+    <text x="864" y="289" text-anchor="middle" font-size="9.5" fill="#047857">cleaned detail · source of truth</text>
+    <rect x="786" y="310" width="156" height="50" rx="7" fill="#fff7ed" stroke="#fdba74"/>
+    <text x="864" y="330" text-anchor="middle" font-size="11" font-weight="700" fill="#9a3412">distributions</text>
+    <text x="864" y="347" text-anchor="middle" font-size="9.5" fill="#c2410c">precomputed · speed layer</text>
+  </g>
+
+  <!-- Columnar engine (scale-time) -->
+  <g>
+    <rect x="772" y="430" width="184" height="66" rx="10" fill="#faf5ff" stroke="#9333ea" stroke-dasharray="5 3"/>
+    <text x="864" y="458" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7c3aed">Columnar engine</text>
+    <text x="864" y="476" text-anchor="middle" font-size="10.5" fill="#6b21a8">DuckDB → warehouse</text>
+  </g>
+
+  <!-- ===== LEGEND ===== -->
+  <g transform="translate(24,512)">
+    <line x1="0" y1="6" x2="26" y2="6" stroke="#64748b" stroke-width="2" marker-end="url(#ar)"/>
+    <text x="34" y="10" font-size="10.5" fill="#475569">Live request + ingest path</text>
+    <line x1="210" y1="6" x2="236" y2="6" stroke="#9333ea" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#arP)"/>
+    <text x="244" y="10" font-size="10.5" fill="#6b21a8">Engages only at scale (10x / 100x)</text>
+    <ellipse cx="476" cy="6" rx="10" ry="4" fill="#f1f5f9" stroke="#94a3b8"/>
+    <text x="492" y="10" font-size="10.5" fill="#475569">Cylinder = storage</text>
+  </g>
+</svg>

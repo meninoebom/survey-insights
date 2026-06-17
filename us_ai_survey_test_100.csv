@@ -1,0 +1,101 @@
+id,age,gender,zip_code,city,state,income,education_level,q1_rating,q2_rating,q3_open,q4_rating,q5_open,sentiment_label
+1,58,Male,46048,SouthAshleyburg,CO,Upper-Middle,Bachelor's Degree,5,1,"It's going to help with forecasting trends in marketing, which is my field.",4,Ethics in AI development is not being prioritized enough.,Positive
+2,31,Male,13478,MountRobertmouth,OH,Lower-Middle,Bachelor's Degree,3,1,"AI can help optimize workflows in the medical field, where I work.",4,It might take over decision-making where humans should remain.,Positive
+3,31,Non-binary,23396,PortBriantown,GA,Lower-Middle,Associate Degree,3,1,No strong opinion yet.,5,I'm concerned about algorithmic bias in hiring.,Neutral
+4,42,Male,92397,WestEricshire,NC,Upper-Middle,High School,2,3,Not sure how I feel about it yet.,2,I'm concerned about algorithmic bias in hiring.,Positive
+5,47,Female,31319,WestAmandashire,GA,Upper-Middle,Bachelor's Degree,1,5,"AI can help optimize workflows in the medical field, where I work.",5,I worry that AI will widen inequality if access is limited.,Positive
+6,42,Male,93886,MountAshleyside,NJ,High,Master's Degree,2,1,I think AI will change the way we collaborate across teams.,4,AI could displace workers who aren't able to reskill quickly.,Positive
+7,76,Non-binary,51245,SouthNicoleview,NJ,High,Bachelor's Degree,2,3,It might automate mundane tasks so I can focus on strategic goals.,2,Privacy is the biggest issue for me.,Negative
+8,65,Female,86484,NewAmandashire,NJ,High,High School,4,1,AI tools already help me write faster at work.,1,Surveillance through AI systems feels invasive.,Negative
+9,68,Female,18326,NewBrianland,OH,High,Bachelor's Degree,5,1,I've started using AI assistants for daily tasks.,5,AI could displace workers who aren't able to reskill quickly.,Neutral
+10,39,Male,30730,FortJameshaven,CA,High,Master's Degree,5,1,AI tools could be integrated into customer support systems to improve efficiency.,5,I'm cautiously optimistic overall.,Positive
+11,41,Female,79514,LakeRachelside,IL,Lower-Middle,High School,3,3,AI sounds like science fiction to me still.,1,I worry that AI will widen inequality if access is limited.,Neutral
+12,78,Male,73699,PortMeganburg,CO,Low,Bachelor's Degree,5,2,I expect AI to handle scheduling and help me stay more organized.,5,I'm cautiously optimistic overall.,Negative
+13,31,Female,36365,EastBrianside,AZ,Lower-Middle,Bachelor's Degree,1,2,AI sounds like science fiction to me still.,1,It might take over decision-making where humans should remain.,Positive
+14,53,Male,10942,PortMariashire,NY,Low,High School,3,1,My job involves a lot of data entry; AI would help enormously.,2,AI could displace workers who aren't able to reskill quickly.,Negative
+15,31,Female,84847,FortAshleyford,CO,Upper-Middle,Some College,1,4,"In finance, AI might take over data crunching and pattern detection.",4,I just don't like AI stuff.,Negative
+16,64,Male,94696,PortMariaview,WA,Upper-Middle,Master's Degree,1,2,"As a teacher, I think AI can assist with grading and personalized learning.",2,Privacy is the biggest issue for me.,Negative
+17,45,Male,42742,PortKevinmouth,TX,Low,Bachelor's Degree,5,1,Not sure how I feel about it yet.,2,There's a lack of accountability when AI systems fail.,Negative
+18,48,Male,17685,NorthBrianville,CA,High,Some College,4,3,"It will probably make hiring decisions, which worries me.",5,I'm worried AI will reinforce societal stereotypes.,Positive
+19,36,Male,85914,MountMariaside,FL,Low,Bachelor's Degree,5,5,"AI can help optimize workflows in the medical field, where I work.",1,Regulation hasn't kept up with the technology.,Positive
+20,29,Male,98501,SouthBriantown,MI,High,Bachelor's Degree,5,5,AI tools already help me write faster at work.,5,The idea of autonomous weapons is deeply unsettling.,Negative
+21,55,Female,44179,SouthChrisshire,GA,Lower-Middle,High School,3,4,I think AI will change the way we collaborate across teams.,1,I'm worried about job displacement.,Negative
+22,54,Non-binary,80468,SouthJasonhaven,MI,Low,Associate Degree,1,2,"In finance, AI might take over data crunching and pattern detection.",3,There's a lack of accountability when AI systems fail.,Negative
+23,52,Female,95717,MountJamesmouth,OH,Lower-Middle,Bachelor's Degree,2,3,I've started using AI assistants for daily tasks.,1,Privacy is the biggest issue for me.,Positive
+24,36,Female,54942,SouthWilliammouth,CO,Lower-Middle,Master's Degree,1,1,"It will probably make hiring decisions, which worries me.",3,Ethics in AI development is not being prioritized enough.,Positive
+25,67,Male,31178,FortMeganview,NC,Upper-Middle,High School,2,5,AI tools already help me write faster at work.,3,Bad actors will exploit it.,Negative
+26,45,Male,57795,LakeAmandashire,NC,Upper-Middle,Bachelor's Degree,3,5,"It will probably make hiring decisions, which worries me.",5,Surveillance through AI systems feels invasive.,Neutral
+27,33,Female,33206,NewJamesburg,AZ,Upper-Middle,Associate Degree,4,2,I expect AI to handle scheduling and help me stay more organized.,2,I'm concerned about algorithmic bias in hiring.,Positive
+28,20,Female,36158,FortAmandahaven,NY,High,Master's Degree,2,1,"As a teacher, I think AI can assist with grading and personalized learning.",4,It might take over decision-making where humans should remain.,Positive
+29,22,Non-binary,56025,MountBrianmouth,NC,Lower-Middle,High School,3,2,"It's going to help with forecasting trends in marketing, which is my field.",3,Ethics in AI development is not being prioritized enough.,Positive
+30,45,Male,51114,NewRachelmouth,AZ,Low,Master's Degree,2,3,AI tools already help me write faster at work.,4,I'm worried about job displacement.,Negative
+31,69,Female,97900,SouthAmandaview,CO,Low,Bachelor's Degree,3,5,I think AI will change the way we collaborate across teams.,1,I don't trust it with personal data.,Negative
+32,60,Male,48752,MountMichaelshire,CA,Lower-Middle,Doctorate,2,5,"It's going to help with forecasting trends in marketing, which is my field.",3,"Feels like a sci-fi movie, not sure what to think.",Negative
+33,18,Male,66346,WestKevinford,NY,Lower-Middle,Some College,4,2,Not sure how I feel about it yet.,3,Regulation hasn't kept up with the technology.,Negative
+34,57,Male,40784,EastAshleyshire,MN,Low,High School,4,5,Not sure how I feel about it yet.,4,I just don't like AI stuff.,Neutral
+35,54,Male,60328,FortBrianshire,CO,Low,Bachelor's Degree,1,4,AI sounds like science fiction to me still.,2,Regulation hasn't kept up with the technology.,Negative
+36,53,Male,25906,FortMichaelford,MN,Upper-Middle,Doctorate,5,3,No strong opinion yet.,5,Regulation hasn't kept up with the technology.,Negative
+37,76,Female,30861,FortKevinhaven,NJ,Upper-Middle,Master's Degree,3,5,I use AI daily and it saves me hours each week.,2,AI could displace workers who aren't able to reskill quickly.,Negative
+38,63,Male,54020,WestMegantown,NC,Low,Some College,2,2,Not sure how I feel about it yet.,4,I just don't like AI stuff.,Positive
+39,47,Male,65069,NewEricville,NY,High,Master's Degree,4,4,I think AI is going to change my industry completely.,3,I don't trust it with personal data.,Neutral
+40,72,Female,64921,MountMeganland,MN,High,Bachelor's Degree,3,4,I use AI daily and it saves me hours each week.,1,"Feels like a sci-fi movie, not sure what to think.",Positive
+41,61,Female,31632,FortMichaelland,CO,Upper-Middle,Master's Degree,5,5,I think AI is going to change my industry completely.,1,I just don't like AI stuff.,Positive
+42,47,Male,59689,WestRobertford,NC,Lower-Middle,Master's Degree,4,3,"It will probably make hiring decisions, which worries me.",3,The idea of autonomous weapons is deeply unsettling.,Negative
+43,65,Female,39389,PortMariaville,GA,High,Some College,1,5,It might automate mundane tasks so I can focus on strategic goals.,2,Surveillance through AI systems feels invasive.,Negative
+44,25,Female,70952,EastAmandaburg,NY,Upper-Middle,Doctorate,1,2,AI tools could be integrated into customer support systems to improve efficiency.,1,Bad actors will exploit it.,Positive
+45,37,Female,59192,NewRoberttown,NJ,Upper-Middle,Master's Degree,2,1,AI tools could be integrated into customer support systems to improve efficiency.,5,I'm concerned about algorithmic bias in hiring.,Neutral
+46,54,Female,79827,NewAmandatown,GA,Upper-Middle,Associate Degree,4,4,I've started using AI assistants for daily tasks.,4,Not too concerned honestly.,Negative
+47,71,Female,67080,NorthJasonhaven,PA,Upper-Middle,Master's Degree,4,4,"It will probably make hiring decisions, which worries me.",5,AI could displace workers who aren't able to reskill quickly.,Positive
+48,33,Female,46559,FortAshleyford,MI,Upper-Middle,Bachelor's Degree,3,1,I use AI daily and it saves me hours each week.,3,There's a lack of accountability when AI systems fail.,Negative
+49,40,Female,46655,EastMeganville,GA,Upper-Middle,Some College,2,4,I use AI daily and it saves me hours each week.,5,I worry that AI will widen inequality if access is limited.,Negative
+50,59,Female,12260,PortJennifershire,TX,Lower-Middle,Some College,5,3,I use AI daily and it saves me hours each week.,5,Regulation hasn't kept up with the technology.,Positive
+51,65,Female,69473,EastJenniferhaven,GA,Lower-Middle,Bachelor's Degree,3,1,I'm skeptical it will live up to the hype.,2,Misuse of AI in spreading misinformation is a real threat.,Positive
+52,48,Male,78765,EastSarahshire,OH,Lower-Middle,Associate Degree,3,1,I'm skeptical it will live up to the hype.,2,AI could displace workers who aren't able to reskill quickly.,Positive
+53,21,Female,26551,FortSarahville,CO,Upper-Middle,Bachelor's Degree,4,3,"AI can help optimize workflows in the medical field, where I work.",1,AI could displace workers who aren't able to reskill quickly.,Neutral
+54,48,Male,62521,FortDavidland,MI,Upper-Middle,High School,2,5,AI tools could be integrated into customer support systems to improve efficiency.,1,I worry that AI will widen inequality if access is limited.,Positive
+55,66,Male,91057,SouthJasonview,OH,Lower-Middle,Bachelor's Degree,5,4,AI tools could be integrated into customer support systems to improve efficiency.,5,I'm cautiously optimistic overall.,Positive
+56,65,Male,37235,SouthWilliamtown,AZ,Low,Some College,1,2,I think AI is going to change my industry completely.,4,Seems dangerous maybe.,Negative
+57,48,Male,47762,EastKevintown,NY,Upper-Middle,Master's Degree,5,2,"It will probably make hiring decisions, which worries me.",1,Privacy is the biggest issue for me.,Positive
+58,27,Female,28643,PortMariaburg,MN,Upper-Middle,Bachelor's Degree,5,3,No strong opinion yet.,1,Seems dangerous maybe.,Negative
+59,62,Male,75597,MountNicoleford,NC,Low,High School,4,3,"Could be good, could be bad.",3,I'm worried about job displacement.,Positive
+60,61,Female,86955,LakeWilliamland,OH,Low,Master's Degree,4,5,No strong opinion yet.,3,There's a lack of accountability when AI systems fail.,Neutral
+61,45,Female,21959,FortAmandaview,TX,Lower-Middle,Bachelor's Degree,2,3,"It will probably make hiring decisions, which worries me.",4,I don't trust it with personal data.,Negative
+62,43,Female,14809,FortDavidside,IL,Lower-Middle,High School,4,5,I think AI is going to change my industry completely.,5,Seems dangerous maybe.,Negative
+63,30,Female,75338,FortMariashire,OH,Lower-Middle,High School,3,4,I use AI daily and it saves me hours each week.,1,I'm worried about job displacement.,Neutral
+64,56,Female,30758,EastMeganville,CO,Upper-Middle,High School,1,4,I've started using AI assistants for daily tasks.,2,I'm worried AI will reinforce societal stereotypes.,Neutral
+65,36,Female,64459,FortNicoleshire,NC,Lower-Middle,High School,2,5,My job involves a lot of data entry; AI would help enormously.,2,The idea of autonomous weapons is deeply unsettling.,Positive
+66,68,Female,76550,EastJameshaven,GA,Upper-Middle,Master's Degree,5,4,It might automate mundane tasks so I can focus on strategic goals.,4,Privacy is the biggest issue for me.,Negative
+67,39,Female,59441,FortChrisshire,IL,High,Some College,4,2,"It will probably make hiring decisions, which worries me.",1,It might take over decision-making where humans should remain.,Neutral
+68,63,Female,60604,NorthNicoleville,CA,Low,Doctorate,3,1,No strong opinion yet.,1,Regulation hasn't kept up with the technology.,Neutral
+69,18,Female,95823,NorthDavidford,CA,Upper-Middle,Some College,5,4,Not sure how I feel about it yet.,3,Privacy is the biggest issue for me.,Positive
+70,38,Female,73956,MountMarialand,NJ,Low,Bachelor's Degree,3,2,Not sure how I feel about it yet.,4,I'm concerned about algorithmic bias in hiring.,Neutral
+71,63,Female,31805,EastJamesville,TX,Lower-Middle,High School,3,3,"It will probably make hiring decisions, which worries me.",2,I worry that AI will widen inequality if access is limited.,Negative
+72,54,Female,32280,NorthDavidland,PA,High,Bachelor's Degree,2,4,"It's going to help with forecasting trends in marketing, which is my field.",2,I worry that AI will widen inequality if access is limited.,Negative
+73,34,Female,11231,FortJennifermouth,WA,Low,Bachelor's Degree,3,5,AI tools could be integrated into customer support systems to improve efficiency.,4,AI could displace workers who aren't able to reskill quickly.,Negative
+74,37,Male,73335,PortAshleyview,CA,Upper-Middle,Bachelor's Degree,3,1,"AI may assist with content generation, saving creative professionals time.",3,I'm worried about job displacement.,Negative
+75,61,Female,89482,FortJennifershire,FL,Upper-Middle,Associate Degree,2,5,I expect AI to handle scheduling and help me stay more organized.,2,I'm concerned about algorithmic bias in hiring.,Neutral
+76,59,Male,67779,LakeEricside,AZ,Upper-Middle,High School,3,3,"It will probably make hiring decisions, which worries me.",2,Misuse of AI in spreading misinformation is a real threat.,Positive
+77,52,Female,79579,MountWilliamburg,GA,Lower-Middle,Master's Degree,4,3,I think AI will change the way we collaborate across teams.,1,Seems dangerous maybe.,Neutral
+78,27,Female,98647,NewMeganside,NY,Low,Bachelor's Degree,3,5,I've started using AI assistants for daily tasks.,4,Not too concerned honestly.,Negative
+79,61,Male,93695,WestSarahshire,CA,Lower-Middle,Bachelor's Degree,5,3,"Could be good, could be bad.",2,The idea of autonomous weapons is deeply unsettling.,Negative
+80,47,Female,95097,NewSarahburg,NC,Low,High School,4,1,I've started using AI assistants for daily tasks.,2,Privacy is the biggest issue for me.,Positive
+81,47,Male,80804,NewEricburg,CO,High,Bachelor's Degree,4,5,"It will probably make hiring decisions, which worries me.",3,Ethics in AI development is not being prioritized enough.,Negative
+82,31,Female,57537,PortAmandamouth,NY,High,Bachelor's Degree,1,4,I expect AI to handle scheduling and help me stay more organized.,2,I'm concerned about algorithmic bias in hiring.,Neutral
+83,70,Female,37801,LakeMariaside,WA,Lower-Middle,High School,5,2,Not sure how I feel about it yet.,5,Misuse of AI in spreading misinformation is a real threat.,Negative
+84,70,Female,29340,LakeWilliamburg,GA,High,Bachelor's Degree,2,1,I think AI is going to change my industry completely.,2,I'm worried about job displacement.,Positive
+85,68,Male,12068,NorthWilliamville,GA,Low,Bachelor's Degree,1,1,I use AI daily and it saves me hours each week.,4,Not too concerned honestly.,Negative
+86,24,Female,90623,LakeJasonhaven,NY,Lower-Middle,Doctorate,1,4,"AI may assist with content generation, saving creative professionals time.",4,I'm concerned about algorithmic bias in hiring.,Negative
+87,76,Female,20589,WestRachelburg,NJ,Low,Associate Degree,5,5,I think AI will change the way we collaborate across teams.,4,I'm cautiously optimistic overall.,Negative
+88,47,Female,22999,PortMeganshire,CA,Lower-Middle,Master's Degree,4,3,No strong opinion yet.,4,I just don't like AI stuff.,Neutral
+89,38,Male,43408,WestMichaelford,WA,Low,Master's Degree,1,4,I've started using AI assistants for daily tasks.,3,Surveillance through AI systems feels invasive.,Negative
+90,55,Non-binary,53207,PortStephanieside,IL,High,Doctorate,4,1,AI tools could be integrated into customer support systems to improve efficiency.,5,I don't trust it with personal data.,Positive
+91,54,Female,96079,FortAshleytown,PA,Lower-Middle,Bachelor's Degree,1,3,"It's going to help with forecasting trends in marketing, which is my field.",2,I just don't like AI stuff.,Neutral
+92,67,Female,98470,MountJamesland,OH,High,Master's Degree,3,1,"AI can help optimize workflows in the medical field, where I work.",3,I don't trust it with personal data.,Neutral
+93,40,Male,28776,NewDavidburg,MN,Upper-Middle,Doctorate,1,5,"As a teacher, I think AI can assist with grading and personalized learning.",4,I just don't like AI stuff.,Negative
+94,28,Male,52517,PortMariaburg,CO,Low,Bachelor's Degree,1,3,No strong opinion yet.,4,I'm worried AI will reinforce societal stereotypes.,Negative
+95,44,Male,77154,PortAmandaview,AZ,Low,Bachelor's Degree,5,4,My job involves a lot of data entry; AI would help enormously.,3,Ethics in AI development is not being prioritized enough.,Positive
+96,56,Male,49507,SouthMichaelhaven,NY,Lower-Middle,High School,4,4,"AI can help optimize workflows in the medical field, where I work.",2,"Feels like a sci-fi movie, not sure what to think.",Negative
+97,32,Female,97562,WestDavidview,MN,High,High School,1,4,Not sure how I feel about it yet.,3,Bad actors will exploit it.,Negative
+98,43,Female,47947,PortBrianville,CA,High,Some College,5,4,"In finance, AI might take over data crunching and pattern detection.",1,I just don't like AI stuff.,Neutral
+99,33,Male,78676,PortBrianhaven,CA,Upper-Middle,Some College,2,1,My job involves a lot of data entry; AI would help enormously.,1,Regulation hasn't kept up with the technology.,Negative
+100,75,Female,94599,NorthAshleytown,GA,Low,Some College,5,2,Not sure how I feel about it yet.,2,I'm worried AI will reinforce societal stereotypes.,Negative
